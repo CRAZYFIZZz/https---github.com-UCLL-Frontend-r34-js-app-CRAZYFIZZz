@@ -1,4 +1,6 @@
-/* --- ALGEMENE RESET & INSTELLINGEN --- */
+/* =========================================
+   1. ALGEMENE INSTELLINGEN & RESET
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -7,25 +9,32 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    /* Leesbaar font voor body tekst */
     color: #f0e6d2;
-    /* Perkament-witte kleur tekst */
     background-color: #1a1a1a;
-    /* Donkere achtergrond */
     line-height: 1.6;
+    min-height: 100vh;
 }
 
-/* --- ACHTERGROND INDEX PAGINA --- */
+/* =========================================
+   2. ACHTERGRONDEN
+   ========================================= */
 #home-body {
-    /* Ik gebruik een online plaatje. Als je je eigen plaatje wilt, zet hier: url('img/jouw-bestand.png') */
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1543091993-2788e04b40d6?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 100vh;
 }
 
-/* --- TYPOGRAFIE --- */
+#Wands {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?q=80&w=2544&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* =========================================
+   3. TYPOGRAFIE & NAVIGATIE
+   ========================================= */
 h1,
 h2,
 h3,
@@ -40,26 +49,23 @@ a {
     color: inherit;
 }
 
-/* --- NAVIGATIEBALK --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    background: rgba(0, 0, 0, 0.6);
-    /* Doorzichtig zwart */
+    background: rgba(0, 0, 0, 0.8);
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid #444;
     backdrop-filter: blur(5px);
-    border-bottom: 1px solid #4a4a4a;
 }
 
 .logo {
     font-size: 2rem;
     color: #ffd700;
-    /* Goud */
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 .nav-links {
@@ -79,10 +85,11 @@ a {
     color: #ffd700;
 }
 
-/* --- HERO SECTION (De grote header) --- */
+/* =========================================
+   4. HOMEPAGE (HERO & CARDS)
+   ========================================= */
 .hero {
-    height: 80vh;
-    /* 80% van de schermhoogte */
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,43 +99,17 @@ a {
 
 .hero h1 {
     font-size: 4rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 0px #000;
 }
 
 .subtitle {
     font-family: 'Cinzel', serif;
     font-size: 1.5rem;
     color: #ccc;
-    margin-bottom: 20px;
-}
-
-.intro-text {
-    font-size: 1.2rem;
     margin-bottom: 30px;
 }
 
-/* Call to Action Knop */
-.cta-button {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: #ffd700;
-    color: #1a1a1a;
-    font-family: 'Cinzel', serif;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: transform 0.2s, background-color 0.2s;
-    border: 2px solid #ffd700;
-}
-
-.cta-button:hover {
-    transform: scale(1.05);
-    /* Iets groter worden */
-    background-color: transparent;
-    color: #ffd700;
-}
-
-/* --- HUIZEN GRID --- */
 .container {
     padding: 50px 5%;
     max-width: 1200px;
@@ -137,116 +118,308 @@ a {
 
 .section-title {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 40px;
     color: #fff;
 }
 
 .houses-grid {
     display: grid;
-    /* Automatisch grid: past zich aan op mobiel en desktop */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    width: 100%;
 }
 
 .house-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-    backdrop-filter: blur(5px);
-}
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s ease;
 
-.house-card:hover {
-    transform: translateY(-10px);
-    /* Omhoog zweven */
+    /* Flexbox centrering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 250px;
 }
 
 .house-card h3 {
-    font-size: 2rem;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+/* Sorteer animaties */
+.house-dimmed {
+    opacity: 0.3;
+    transform: scale(0.95);
+}
+
+.house-selected {
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 0 30px currentColor;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* =========================================
+   5. QUIZ MODAL STYLING
+   ========================================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: #1a1a1a;
+    border: 2px solid #ffd700;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.modal-content h2 {
+    color: #ffd700;
     margin-bottom: 15px;
 }
 
-.trait {
-    display: inline-block;
-    margin-top: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+.modal-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: #fff;
 }
 
-/* --- SPECIFIEKE KLEUREN PER HUIS --- */
-/* Gryffindor - Rood/Goud */
-.gryffindor {
-    border-bottom: 4px solid #740001;
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quiz-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #555;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.quiz-btn:hover {
+    background: #ffd700;
+    color: #000;
+    border-color: #ffd700;
+}
+
+/* =========================================
+   6. WANDS FORMULIER & LIJSTEN
+   ========================================= */
+button,
+.cta-button {
+    background-color: transparent;
+    border: 2px solid #ffd700;
+    color: #ffd700;
+    padding: 10px 20px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+button:hover,
+.cta-button:hover {
+    background-color: #ffd700;
+    color: #000;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+#stick-form {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #ffd700;
+    margin-top: 20px;
+    display: none;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ccc;
+    font-family: 'Cinzel', serif;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    color: #fff;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+#wand-items {
+    list-style: none;
+    margin-top: 20px;
+}
+
+#wand-items h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+li {
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 4px solid #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 5px 5px 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+}
+
+li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+li button {
+    border-color: #ff4444;
+    color: #ff4444;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    margin: 0 0 0 15px;
+}
+
+li button:hover {
+    background-color: #ff4444;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
+}
+
+/* =========================================
+   7. HUIS KLEUREN
+   ========================================= */
+.gryffindor,
+.gryffindor-group {
+    border-color: #740001 !important;
+    color: #ffcccc;
+}
+
+.gryffindor h3,
+.gryffindor-group {
+    color: #d3a625 !important;
 }
 
 .gryffindor:hover {
-    box-shadow: 0 0 20px #740001;
+    box-shadow: 0 0 15px #740001;
 }
 
-.gryffindor h3 {
-    color: #d3a625;
-    text-shadow: 1px 1px #740001;
+.slytherin,
+.slytherin-group {
+    border-color: #2E8B57 !important;
+    color: #d4f7dc;
 }
 
-/* Slytherin - Groen/Zilver */
-.slytherin {
-    border-bottom: 4px solid #1a472a;
+.slytherin h3,
+.slytherin-group {
+    color: #2E8B57 !important;
 }
 
 .slytherin:hover {
-    box-shadow: 0 0 20px #1a472a;
+    box-shadow: 0 0 15px #2E8B57;
 }
 
-.slytherin h3 {
-    color: #aaaaaa;
-    text-shadow: 1px 1px #1a472a;
+.ravenclaw,
+.ravenclaw-group {
+    border-color: #4169E1 !important;
+    color: #dce5ff;
 }
 
-/* Ravenclaw - Blauw/Brons */
-.ravenclaw {
-    border-bottom: 4px solid #0e1a40;
+.ravenclaw h3,
+.ravenclaw-group {
+    color: #4169E1 !important;
 }
 
 .ravenclaw:hover {
-    box-shadow: 0 0 20px #222f5b;
+    box-shadow: 0 0 15px #4169E1;
 }
 
-.ravenclaw h3 {
-    color: #946b2d;
-    text-shadow: 1px 1px #0e1a40;
+.hufflepuff,
+.hufflepuff-group {
+    border-color: #FFD700 !important;
+    color: #fffacd;
 }
 
-/* Hufflepuff - Geel/Zwart */
-.hufflepuff {
-    border-bottom: 4px solid #ecb939;
+.hufflepuff h3,
+.hufflepuff-group {
+    color: #FFD700 !important;
 }
 
 .hufflepuff:hover {
-    box-shadow: 0 0 20px #ecb939;
+    box-shadow: 0 0 15px #FFD700;
 }
 
-.hufflepuff h3 {
-    color: #372e29;
-    text-shadow: 1px 1px #ecb939;
-}
-
-/* --- FOOTER --- */
+/* =========================================
+   8. FOOTER & MEDIA
+   ========================================= */
 footer {
     text-align: center;
     padding: 20px;
     background-color: #000;
-    color: #888;
+    color: #666;
     margin-top: 50px;
     border-top: 1px solid #333;
+    font-size: 0.9rem;
 }
 
-/* --- RESPONSIVE AANPASSINGEN (Mobiel) --- */
-@media (max-width: 768px) {
+footer a {
+    color: #888;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #ffd700;
+}
+
+/* Alleen op mobiel (kleiner dan 800px) gaan ze onder elkaar */
+@media (max-width: 800px) {
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -254,5 +427,21 @@ footer {
     .navbar {
         flex-direction: column;
         gap: 10px;
+    }
+
+    /* Hier laten we ze onder elkaar gaan op telefoon */
+    .houses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    li button {
+        width: 100%;
+        margin-left: 0;
     }
 }

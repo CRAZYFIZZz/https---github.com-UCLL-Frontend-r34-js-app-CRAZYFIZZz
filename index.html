@@ -7,9 +7,7 @@
     <title>Ollivanders Wand Shop</title>
 
     <link rel="stylesheet" href="stijl.css">
-
     <link href="https://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap"
         rel="stylesheet">
 </head>
@@ -30,7 +28,11 @@
             <p class="subtitle">Makers van Fijne Toverstokken sinds 382 v.Chr.</p>
             <p class="intro-text">Hier vindt elke tovenaar of heks zijn perfecte match.</p>
 
-            <a href="wands.html" class="cta-button">Betreed de Winkel</a>
+            <div class="hero-buttons">
+                <a href="wands.html" class="cta-button">Betreed de Winkel</a>
+                <button id="sorting-hat-btn" class="cta-button"
+                    style="margin-left: 10px; border-color: #fff; color: #fff;">Doe de Quiz!</button>
+            </div>
         </div>
     </header>
 
@@ -64,10 +66,21 @@
         </div>
     </main>
 
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="quiz-question">Vraag 1/4</h2>
+            <p id="quiz-text">Laden...</p>
+
+            <div class="quiz-options">
+            </div>
+        </div>
+    </div>
+
     <footer id="footer">
         <p>&#169; 2025 - Joaquin Smits - Ollivanders</p>
     </footer>
 
+    <script src="Home.js"></script>
 </body>
 
 </html>
