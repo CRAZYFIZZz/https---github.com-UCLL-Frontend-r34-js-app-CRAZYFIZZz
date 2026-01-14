@@ -4,41 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Begin paggina Ollivanders</title>
+    <title>Ollivanders Wand Shop</title>
+
     <link rel="stylesheet" href="stijl.css">
+
     <link href="https://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
-    <style>
-        @import url('https://fonts.cdnfonts.com/css/harry-potter');
-    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 
-<body id="Begin">
-    <div id="container">
-        <h1>Welkom bij Ollivander's Toverstok Winkel</h1>
-        <p>Hier vindt elke tovenaar of heks zijn perfecte toverstok.</p>
-        <p>Wil je al de toverstokken zien wat er gekocht zijn bij mij Klik dan <a href="wands.html"> hier</a>.</p>
+<body id="home-body">
 
-        <h2>Over de Vier Huizen van Hogwarts</h2>
-        <div id="Gryffindor">
-            <h2>Gryffindor</h2>
-            <p>Bekend om moed en dapperheid. Studenten van Gryffindor zijn leiders, avonturiers en beschermers.</p>
+    <nav class="navbar">
+        <div class="logo">Ollivanders</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="wands.html">De Winkel</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Ollivander's Toverstok Winkel</h1>
+            <p class="subtitle">Makers van Fijne Toverstokken sinds 382 v.Chr.</p>
+            <p class="intro-text">Hier vindt elke tovenaar of heks zijn perfecte match.</p>
+
+            <a href="wands.html" class="cta-button">Betreed de Winkel</a>
         </div>
-        <h2>Slytherin</h2>
-        <p>Slytherin is synoniem met ambitie en slimheid. Leden van dit huis streven naar grootheid en macht.
-        </p>
+    </header>
 
-        <h2>Ravenclaw</h2>
-        <p>De Ravenclaw-studenten staan bekend om hun wijsheid, creativiteit en intellect.</p>
+    <main class="container">
+        <h2 class="section-title">De Vier Huizen van Hogwarts</h2>
 
-        <h2>Hufflepuff</h2>
-        <p>Hufflepuff waardeert hard werken, loyaliteit en eerlijkheid. Het zijn betrouwbare en vriendelijke
-            individuen.</p>
+        <div class="houses-grid">
+            <div class="house-card gryffindor">
+                <h3>Gryffindor</h3>
+                <p>Bekend om moed, dapperheid en ridderlijkheid.</p>
+                <span class="trait">Avonturiers</span>
+            </div>
 
+            <div class="house-card slytherin">
+                <h3>Slytherin</h3>
+                <p>Synoniem met ambitie, sluwheid en leiderschap.</p>
+                <span class="trait">Macht</span>
+            </div>
 
-    </div>
+            <div class="house-card ravenclaw">
+                <h3>Ravenclaw</h3>
+                <p>Bekend om wijsheid, creativiteit en intellect.</p>
+                <span class="trait">Wijsheid</span>
+            </div>
+
+            <div class="house-card hufflepuff">
+                <h3>Hufflepuff</h3>
+                <p>Waardeert hard werken, geduld, loyaliteit en fair play.</p>
+                <span class="trait">Loyaliteit</span>
+            </div>
+        </div>
+    </main>
+
     <footer id="footer">
-        <p>&#169; - Joaquin Smits</p>
+        <p>&#169; 2025 - Joaquin Smits - Ollivanders</p>
     </footer>
+
 </body>
 
 </html>

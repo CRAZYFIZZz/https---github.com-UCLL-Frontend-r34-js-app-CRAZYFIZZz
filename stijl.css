@@ -1,189 +1,258 @@
-#Begin {
-    background-image: url('img/Schermafbeelding 2025-01-12 220607.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    width: 100vw;
-
-    text-shadow:
-        0.02px 0.02px white,
-        -0.02px 0.02px white,
-        0.02px -0.02px white,
-        -0.02px -0.02px white;
-    font-size: 35px;
-    font-weight: bolder;
-    font-family: 'Brush Script MT', cursive;
-
-}
-
-#Wands {
-
-    /* text-shadow:
-        0.02px 0.02px white,
-        -0.02px 0.02px white,
-        0.02px -0.02px white,
-        -0.02px -0.02px white; */
-    font-size: 15px;
-    font-weight: bolder;
-    font-family: 'Brush Script MT', cursive;
-
-}
-
-
-h1,
-h2,
-h3 {
-    font-family: 'Harry Potter', sans-serif;
-    font-size: 30px;
-    text-shadow:
-        0.5px 0.5px white,
-        -0.5px 0.5px white,
-        0.5px -0.5px white,
-        -0.5px -0.5px white;
-}
-
-a {
-    color: black;
-}
-
-@media (max-width: 350px) {
-
-    h1,
-    h2,
-    h3 {
-        font-size: 16px;
-
-    }
-
-    #Begin,
-    #Wands {
-
-        text-shadow:
-            0.02px 0.02px white,
-            -0.02px 0.02px white,
-            0.02px -0.02px white,
-            -0.02px -0.02px white;
-        font-size: 28px;
-        font-weight: bolder;
-        font-family: 'Brush Script MT', cursive;
-
-    }
-
-}
-
-#Wands {
-    background-image: url(img/harry_potter_wallpaper__gryffindor_pinstripes_by_theladyavatar_d6l7u6e-fullview.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-size: contain;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-}
-
-/* Verberg het formulier standaard */
-#stick-form {
-    display: none;
-    margin-top: 20px;
-}
-
-.container {
-
-    margin: auto;
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-li {
-    /* text-shadow:
-        0.05px 0.05px white,
-        -0.05px 0.05px white,
-        0.05px -0.05px white,
-        -0.05px -0.05px white; */
-    font-size: 23px;
-    font-stretch: ultra-expanded;
-
-    font-family: 'Brush Script MT', cursive;
-
-}
-
-form label,
-form input,
-form select,
-form button {
-    width: 100%;
+/* --- ALGEMENE RESET & INSTELLINGEN --- */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-form button {
-    margin-top: 20px;
-    padding: 2px;
-    font-size: 15px;
-    cursor: pointer;
+body {
+    font-family: 'Lato', sans-serif;
+    /* Leesbaar font voor body tekst */
+    color: #f0e6d2;
+    /* Perkament-witte kleur tekst */
+    background-color: #1a1a1a;
+    /* Donkere achtergrond */
+    line-height: 1.6;
 }
 
-button {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    display: block;
+/* --- ACHTERGROND INDEX PAGINA --- */
+#home-body {
+    /* Ik gebruik een online plaatje. Als je je eigen plaatje wilt, zet hier: url('img/jouw-bestand.png') */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1543091993-2788e04b40d6?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
+/* --- TYPOGRAFIE --- */
+h1,
+h2,
+h3,
+.logo {
+    font-family: 'Harry Potter', 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- NAVIGATIEBALK --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Doorzichtig zwart */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid #4a4a4a;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #ffd700;
+    /* Goud */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffd700;
+}
+
+/* --- HERO SECTION (De grote header) --- */
+.hero {
+    height: 80vh;
+    /* 80% van de schermhoogte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Call to Action Knop */
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #ffd700;
+    color: #1a1a1a;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.2s;
+    border: 2px solid #ffd700;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    /* Iets groter worden */
+    background-color: transparent;
+    color: #ffd700;
+}
+
+/* --- HUIZEN GRID --- */
+.container {
+    padding: 50px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.houses-grid {
+    display: grid;
+    /* Automatisch grid: past zich aan op mobiel en desktop */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.house-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.house-card:hover {
+    transform: translateY(-10px);
+    /* Omhoog zweven */
+}
+
+.house-card h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.trait {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* --- SPECIFIEKE KLEUREN PER HUIS --- */
+/* Gryffindor - Rood/Goud */
+.gryffindor {
+    border-bottom: 4px solid #740001;
+}
+
+.gryffindor:hover {
+    box-shadow: 0 0 20px #740001;
+}
+
+.gryffindor h3 {
+    color: #d3a625;
+    text-shadow: 1px 1px #740001;
+}
+
+/* Slytherin - Groen/Zilver */
+.slytherin {
+    border-bottom: 4px solid #1a472a;
+}
+
+.slytherin:hover {
+    box-shadow: 0 0 20px #1a472a;
+}
+
+.slytherin h3 {
+    color: #aaaaaa;
+    text-shadow: 1px 1px #1a472a;
+}
+
+/* Ravenclaw - Blauw/Brons */
+.ravenclaw {
+    border-bottom: 4px solid #0e1a40;
+}
+
+.ravenclaw:hover {
+    box-shadow: 0 0 20px #222f5b;
+}
+
+.ravenclaw h3 {
+    color: #946b2d;
+    text-shadow: 1px 1px #0e1a40;
+}
+
+/* Hufflepuff - Geel/Zwart */
+.hufflepuff {
+    border-bottom: 4px solid #ecb939;
+}
+
+.hufflepuff:hover {
+    box-shadow: 0 0 20px #ecb939;
+}
+
+.hufflepuff h3 {
+    color: #372e29;
+    text-shadow: 1px 1px #ecb939;
+}
+
+/* --- FOOTER --- */
 footer {
-    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #888;
+    margin-top: 50px;
+    border-top: 1px solid #333;
 }
 
-.slytherin-group {
-    background-color: #2E8B57;
-    /* Groene kleur voor Slytherin */
-    color: black;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
+/* --- RESPONSIVE AANPASSINGEN (Mobiel) --- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
 
-
-
-.gryffindor-group {
-    background-color: #B22222;
-    color: black;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-.ravenclaw-group {
-    background-color: #4169E1;
-    /* Blauw voor Ravenclaw */
-    color: black;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-.hufflepuff-group {
-    background-color: #FFD700;
-    /* Geel voor Hufflepuff */
-    color: black;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-.mine-group {
-    background-color: #f5f5dc;
-
-    color: black;
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
